@@ -1,5 +1,5 @@
 --  9. Create function that will return average mark for input subject name. (0.3 point).
-CREATE OR REPLACE FUNCTION get_subject_average_mark(sub_id int)
+CREATE OR REPLACE FUNCTION get_subject_average_mark(sub_name varchar)
 RETURNS real
 LANGUAGE plpgsql
 AS
@@ -11,7 +11,7 @@ BEGIN
 	INTO subject_average_mark
 	FROM subjects s
 	INNER JOIN exam_results e ON s.id=e.subject_id
-	WHERE s.id = sub_id;
+	WHERE s.name = sub_name;
 
    RETURN subject_average_mark;
 END;
