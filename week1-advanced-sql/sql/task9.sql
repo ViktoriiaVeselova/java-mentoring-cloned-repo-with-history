@@ -22,3 +22,10 @@ SELECT *
 FROM student
 WHERE NOT (id = ANY (SELECT student_id FROM exam_result));
 
+
+--With Except
+SELECT id
+FROM student
+EXCEPT
+SELECT student_id FROM exam_result;
+
