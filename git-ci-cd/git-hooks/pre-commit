@@ -3,6 +3,7 @@ echo "*****Running maven build******"
 
 git stash -q --keep-index
 
+cd git-ci-cd
 mvn clean install
 
 status=$?
