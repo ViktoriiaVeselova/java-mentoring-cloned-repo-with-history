@@ -16,6 +16,7 @@ public class App {
         System.out.printf("Subtraction of %d and %d is: %d %n", a, b, calculator.sub(a, b));
         System.out.printf("Division of %d and %d is: %d %n", a, b, calculator.div(a, b));
 
+
         scanner.close();
     }
 }
