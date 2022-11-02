@@ -43,4 +43,5 @@ class SimpleCalculatorTest {
     void divTest_when_Divider_Zero() {
         assertThrows(ArithmeticException.class, () -> simpleCalculator.div(BigInteger.valueOf(10), BigInteger.valueOf(0)));
     }
+
 }
