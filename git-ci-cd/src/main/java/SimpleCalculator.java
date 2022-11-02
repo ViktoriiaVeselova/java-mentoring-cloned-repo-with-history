@@ -14,6 +14,4 @@ public class SimpleCalculator {
     public BigInteger div(BigInteger i, BigInteger j) {
         return i.divide(j);
     }
-
-
 }
