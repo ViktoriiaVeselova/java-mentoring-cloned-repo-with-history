@@ -1,7 +1,10 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigInteger;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class SimpleCalculatorTest {
 
@@ -14,31 +17,30 @@ class SimpleCalculatorTest {
 
     @Test
     void addTest() {
-        var result = simpleCalculator.add(2, 2);
-        assertEquals(4, result);
+        var result = simpleCalculator.add(BigInteger.TWO,  BigInteger.TWO);
+        assertEquals(BigInteger.valueOf(4), result);
     }
 
     @Test
     void mulTest() {
-        var result = simpleCalculator.mul(5, 5);
-        assertEquals(25, result);
+        var result = simpleCalculator.mul(BigInteger.valueOf(5), BigInteger.valueOf(5));
+        assertEquals(BigInteger.valueOf(25), result);
     }
 
     @Test
     void subTest() {
-        var result = simpleCalculator.sub(10, 8);
-        assertEquals(2, result);
+        var result = simpleCalculator.sub(BigInteger.valueOf(10), BigInteger.valueOf(8));
+        assertEquals(BigInteger.valueOf(2), result);
     }
 
     @Test
     void divTest() {
-        var result = simpleCalculator.div(10, 2);
-        assertEquals(5, result);
+        var result = simpleCalculator.div(BigInteger.valueOf(10), BigInteger.valueOf(2));
+        assertEquals(BigInteger.valueOf(5), result);
     }
 
     @Test
     void divTest_when_Divider_Zero() {
-        var result = simpleCalculator.div(10, 0);
-        assertEquals(0, result);
+        assertThrows(ArithmeticException.class, () -> simpleCalculator.div(BigInteger.valueOf(10), BigInteger.valueOf(0)));
     }
 }
